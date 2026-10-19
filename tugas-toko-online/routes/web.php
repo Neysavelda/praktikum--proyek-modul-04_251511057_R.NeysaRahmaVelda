@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TokoController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\RoleController;
+
+Route::middleware(['auth', 'can:manage-roles'])->group(function () {
+    Route::get('/admin/users', [RoleController::class, 'index'])->name('admin.users.index');
+    Route::patch('/admin/users/{user}/role', [RoleController::class, 'update'])->name('admin.users.role.update');
+});
 
 Route::get('/', [TokoController::class, 'index']);
 Route::get('/login', [TokoController::class, 'loginForm'])->name('login');

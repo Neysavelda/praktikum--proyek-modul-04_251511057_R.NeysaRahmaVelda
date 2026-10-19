@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             'nama_lengkap' => 'Budi Santoso',
             'email' => 'budi@example.com',
             'username' => 'budi',
-            'password' => Hash::make('rahasia123!'),
+            'password' => Hash::make('rahasia123'),
             'no_hp' => '081234567890',
             'alamat' => 'Jl. Gegerkalongsari No. 10, Bandung'
         ]);
